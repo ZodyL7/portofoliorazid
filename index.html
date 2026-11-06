@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio Raihan Zidan — dokumentasi PJBL & video editing, siswa SMK Teknik Komputer dan Jaringan." />
+  <title>Raihan Zidan — Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ===== Bagian pencapaian TikTok ===== */
+    .social-proof {
+      padding: clamp(56px, 8vw, 104px) 0;
+      background: #f7f8fc;
+    }
+    .social-proof__grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 34px;
+    }
+    .social-proof__card {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid rgba(20, 30, 55, .10);
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 12px 36px rgba(20, 30, 55, .06);
+    }
+    .social-proof__image-wrap {
+      display: grid;
+      place-items: center;
+      min-height: 280px;
+      padding: 18px;
+      background: #eef1f7;
+    }
+    .social-proof__image {
+      display: block;
+      width: 100%;
+      max-height: 540px;
+      object-fit: contain;
+      border-radius: 10px;
+      background: #fff;
+    }
+    .social-proof__caption {
+      padding: 20px 22px 22px;
+    }
+    .social-proof__caption h3 {
+      margin: 0 0 7px;
+      color: #172033;
+      font: 700 1.08rem/1.35 'Sora', sans-serif;
+    }
+    .social-proof__caption p {
+      margin: 0;
+      color: #667085;
+      font: 400 .94rem/1.65 'Inter', sans-serif;
+    }
+
+    /* ===== Portofolio video: landscape, satu video per layar ===== */
+    #video-editing {
+      padding-top: clamp(54px, 7vw, 90px);
+      padding-bottom: 0;
+    }
+    #video-editing .creative__head {
+      margin-bottom: 12px;
+    }
+    .video-showcase {
+      display: block;
+      margin-top: 24px;
+    }
+    .video-showcase__item {
+      min-height: min(100vh, 940px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(42px, 7vh, 76px) 0;
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      scroll-margin-top: 84px;
+    }
+    .video-showcase__heading {
+      width: min(100%, 1100px);
+      margin: 0 auto 22px;
+    }
+    .video-showcase__category {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: #9caeff;
+      font: 700 .76rem/1.4 'Inter', sans-serif;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .video-showcase__title {
+      margin: 0 0 10px;
+      color: #fff;
+      font: 700 clamp(1.35rem, 2.6vw, 2rem)/1.25 'Sora', sans-serif;
+    }
+    .video-showcase__description {
+      max-width: 820px;
+      margin: 0;
+      color: rgba(255, 255, 255, .72);
+      font: 400 .98rem/1.75 'Inter', sans-serif;
+    }
+    .video-showcase__frame {
+      width: min(100%, 1100px);
+      margin: 0 auto;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 18px;
+      background: #050505;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, .28);
+    }
+    .video-showcase__player {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+    }
+    .video-showcase__number {
+      display: flex;
+      justify-content: flex-end;
+      width: min(100%, 1100px);
+      margin: 12px auto 0;
+      color: rgba(255, 255, 255, .42);
+      font: 600 .8rem/1.4 'Inter', sans-serif;
+      letter-spacing: .08em;
+    }
+
+    @media (max-width: 760px) {
+      .social-proof__grid { grid-template-columns: 1fr; }
+      .social-proof__image-wrap { min-height: 220px; }
+      .social-proof__image { max-height: 460px; }
+      .video-showcase__item {
+        min-height: auto;
+        padding: 54px 0;
+      }
+      .video-showcase__frame { border-radius: 12px; }
+      .video-showcase__description { font-size: .9rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="#beranda" class="navbar__logo">RZ<span>.</span></a>
+
+      <!-- Menu mobile dibuka/tutup pakai trik checkbox, TANPA JavaScript -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+
+      <nav class="navbar__links" aria-label="Navigasi utama">
+        <a href="#beranda">Beranda</a>
+        <a href="#dokumentasi-pjbl">Dokumentasi PJBL</a>
+        <a href="#pencapaian-tiktok">Pencapaian</a>
+        <a href="#video-editing">Video Editing</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <a href="cv/CV-Raihan-Zidan.pdf" download class="btn btn-outline navbar__cv">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 3v12M7 11l5 5 5-5M5 21h14" /></svg>
+          Unduh CV
+        </a>
+        <label for="nav-toggle" class="navbar__burger" aria-label="Buka menu">
+          <svg class="icon icon--open" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <svg class="icon icon--close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+    <section id="beranda" class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="hero__status"><span class="hero__status-dot"></span> Siswa TKJ · Terbuka untuk Kesempatan PKL</span>
+          <h1 class="hero__headline">Portofolio<br />Raihan Zidan Rafif Sa'dillah</h1>
+          <p class="hero__intro">
+            Halo, saya <strong>Raihan Zidan</strong>, siswa Teknik Komputer dan Jaringan yang memiliki
+            ketertarikan pada bidang it
+          </p>
+          <div class="hero__actions">
+            <a href="#dokumentasi-pjbl" class="btn btn-primary">Dokumentasi PJBL
+              <svg class="icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><path d="M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#video-editing" class="btn btn-outline--dark">Portofolio Video
+              <svg class="icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><path d="M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero__photo-frame">
+            <img src="images/foto-profil.jpg" alt="Foto profil Raihan Zidan" loading="eager" />
+          </div>
+          <div class="hero__badge hero__badge--1">TKJ</div>
+          <div class="hero__badge hero__badge--2">PKL Ready</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 2. DOKUMENTASI PJBL ================= -->
+    <section id="dokumentasi-pjbl" class="section projects">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Dokumentasi PJBL</span>
+          <h2 class="section-title">Praktik nyata dari ruang kelas ke lapangan</h2>
+          <p class="section-desc">Dokumentasi proyek Project Based Learning (PJBL) yang saya kerjakan selama belajar di jurusan TKJ.</p>
+        </div>
+
+        <div class="projects__grid">
+
+          <!-- Kartu Proyek 1 -->
+          <article class="project-card">
+            <div class="project-card__thumb"><img src="images/project-lab.jpeg" alt="Maintenance Lab Komputer" loading="lazy" /></div>
+            <div class="project-card__body">
+              <span class="project-card__category">Maintenance &amp; Hardware</span>
+              <h3 class="project-card__title">Maintenance &amp; Perawatan Laboratorium Komputer SMPN 1 Wagir</h3>
+              <p class="project-card__summary">Kegiatan PJBL Kelompok 8 X TKJ A: maintenance menyeluruh terhadap sekitar 24 unit komputer di SMPN1 Wagir</p>
+              <div class="project-card__tech"><span>Windows</span><span>Hardware Troubleshooting</span><span>Driver &amp; System Update</span></div>
+              <a href="#proyek-lab" class="project-card__btn">Lihat Detail
+                <svg class="icon icon--sm" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><path d="M8 7h9v9"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Kartu Proyek 2 -->
+          <article class="project-card">
+            <div class="project-card__thumb"><img src="images/project-jellyfin.png" alt="Media Server Jellyfin" loading="lazy" /></div>
+            <div class="project-card__body">
+              <span class="project-card__category">Networking &amp; Server</span>
+              <h3 class="project-card__title">Penyediaan Media Server Terpusat Menggunakan Jellyfin</h3>
+              <p class="project-card__summary">Proyek PJBL penyediaan media server terpusat berbasis Jellyfin di atas Debian, diuji dengan VirtualBox.</p>
+              <div class="project-card__tech"><span>Jellyfin</span><span>Debian</span><span>VirtualBox</span><span>Server</span></div>
+              <a href="#proyek-jellyfin" class="project-card__btn">Lihat Detail
+                <svg class="icon icon--sm" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><path d="M8 7h9v9"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Kartu Proyek 3 -->
+          <article class="project-card">
+            <div class="project-card__thumb"><img src="images/project-maket.jpeg" alt="Maket Sistem Input Output" loading="lazy" /></div>
+            <div class="project-card__body">
+              <span class="project-card__category">Pembelajaran Sistem Komputer</span>
+              <h3 class="project-card__title">Maket Pemrosesan Data pada Sistem Input Output</h3>
+              <p class="project-card__summary">Proyek pembelajaran yang memvisualisasikan alur proses input, pengolahan data, dan output dalam sistem komputer.</p>
+              <div class="project-card__tech"><span>Konsep Sistem Komputer</span><span>Media pembelajaran</span></div>
+              <a href="#proyek-maket" class="project-card__btn">Lihat Detail
+                <svg class="icon icon--sm" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><path d="M8 7h9v9"/></svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- ===== Detail Proyek (modal tanpa JavaScript, pakai trik CSS :target) ===== -->
+      <div id="proyek-lab" class="overlay">
+        <div class="overlay__panel">
+          <a href="#dokumentasi-pjbl" class="overlay__close" aria-label="Tutup">
+            <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </a>
+          <span class="overlay__category">Maintenance &amp; Hardware</span>
+          <h3 class="overlay__title">Maintenance &amp; Perawatan Laboratorium Komputer SMPN 1 Wagir</h3>
+          <div class="overlay__gallery">
+            <figure><img src="images/project-lab.jpeg" alt="Dokumentasi kegiatan maintenance" loading="lazy" /><figcaption>Dokumentasi kegiatan maintenance laboratorium</figcaption></figure>
+          </div>
+          <div class="overlay__body">
+            <p>Proyek ini merupakan kegiatan Project Based Learning (PJBL) yang dikerjakan bersama Kelompok 8 kelas X TKJ A, dengan fokus pada maintenance dan perawatan laboratorium komputer di SMPN 1 Wagir.</p>
+            <p>Pekerjaan yang dilakukan meliputi troubleshooting perangkat, pemeriksaan koneksi jaringan, update sistem operasi, optimasi performa Windows, perbaikan driver suara, hingga pembersihan menyeluruh unit komputer.</p>
+            <p>Dari sekitar 24 komputer Dell All-in-One yang ditangani, seluruhnya berhasil diperbaiki dan dikembalikan ke kondisi siap pakai.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="proyek-jellyfin" class="overlay">
+        <div class="overlay__panel">
+          <a href="#dokumentasi-pjbl" class="overlay__close" aria-label="Tutup">
+            <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </a>
+          <span class="overlay__category">Networking &amp; Server</span>
+          <h3 class="overlay__title">Penyediaan Media Server Terpusat Menggunakan Jellyfin</h3>
+          <div class="overlay__gallery">
+            <figure><img src="images/project-jellyfin.png" alt="Dashboard Jellyfin" loading="lazy" /><figcaption>Tampilan dashboard Jellyfin</figcaption></figure>
+          </div>
+          <div class="overlay__body">
+            <p>Proyek pembelajaran ini bertujuan merancang dan menguji sebuah media server terpusat menggunakan Jellyfin yang berjalan di atas sistem operasiDebian.</p>
+            <p>Simulasi dan pengujian dilakukan menggunakan VirtualBox untuk meniru lingkungan server sebelum diterapkan pada perangkat sesungguhnya.</p>
+            <p>Tujuan dari proyek ini adalah memudahkan client mengakses media pembelajaran dari satu server terpusat, tanpa bergantung pada penyimpanan lokal di masing-masing perangkat.</p>
+          </div>
+          <p class="overlay__note"></p>
+        </div>
+      </div>
+
+      <div id="proyek-maket" class="overlay">
+        <div class="overlay__panel">
+          <a href="#dokumentasi-pjbl" class="overlay__close" aria-label="Tutup">
+            <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </a>
+          <span class="overlay__category">Pembelajaran Sistem Komputer</span>
+          <h3 class="overlay__title">Maket Pemrosesan Data pada Sistem Input Output</h3>
+          <div class="overlay__gallery">
+            <figure><img src="images/project-maket.jpeg" alt="Dokumentasi maket" loading="lazy" /><figcaption>Maket Pemrosesan Data pada Sistem Input Output</figcaption></figure>
+          </div>
+          <div class="overlay__body">
+            <p>Maket ini dibuat sebagai media pembelajaran untuk menjelaskan secara visual bagaimana sebuah sistem komputer memproses data: mulai dari tahap input, pemrosesan, hingga menghasilkan output.</p>
+            <p>Melalui proyek ini, konsep dasar arsitektur sistem komputer menjadi lebih mudah dipahami secara nyata, tidak hanya secara teori.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ================= 3. PENCAPAIAN & AKUN TIKTOK ================= -->
+    <section id="pencapaian-tiktok" class="social-proof">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Dokumentasi edit
+          <h2 class="section-title"></h2>
+          <p class="section-desc">
+            Dokumentasi timeline, hasil editing dan akun TikTok yang saya kelola sebagai clipper.
+            
+          </p>
+        </div>
+
+        <div class="social-proof__grid">
+          <article class="social-proof__card">
+            <div class="social-proof__image-wrap">
+              <img class="social-proof__image" src="images/Screenshot_2026-11-06-13-32-51-076_com.ss.android.ugc.trill.jpg.jpeg"
+                   alt="Screenshot total views dari akun TikTok" loading="lazy" />
+            </div>
+            <div class="social-proof__caption">
+              <h3>Akun utama saya</h3>
+              <p>Screenshoot akun utama saya yang berfokus ke campign mlbb.</p>
+            </div>
+          </article>
+
+          <article class="social-proof__card">
+            <div class="social-proof__image-wrap">
+              <img class="social-proof__image" src="images/WhatsApp Image 2026-11-06 at 19.28.28.jpeg"
+                   alt="Screenshot profil akun TikTok" loading="lazy" />
+            </div>
+            <div class="social-proof__caption">
+              <h3>Timeline edit di capcut</h3>
+              <p>Beberapa timeline clip saya selama edit di capcut hp.</p>
+            </div>
+          </article>
+          <!-- Dokumentasi Editing Landscape -->
+<article class="social-proof__card social-proof__card--wide">
+  <div class="social-proof__image-wrap">
+    <img
+      class="social-proof__image"
+      src="images/Screenshot 2026-07-14 181731.png"
+      alt="Dokumentasi hasil dan proses editing video"
+      loading="lazy"
+    />
+  </div>
+  <div class="social-proof__caption">
+    <h3>Dokumentasi Video Editing</h3>
+    <p>Dokumentasi aktivitas dan hasil karya video editing.</p>
+  </div>
+</article>
+<!-- Dokumentasi Editing Landscape -->
+<article class="social-proof__card social-proof__card--wide">
+  <div class="social-proof__image-wrap">
+    <img
+      class="social-proof__image"
+      src="images/Screenshot (648).png"
+      alt="Dokumentasi hasil dan proses editing video"
+      loading="lazy"
+    />
+  </div>
+  <div class="social-proof__caption">
+    <h3>Dokumentasi Video Editing</h3>
+    <p>Dokumentasi aktivitas dan hasil karya video editing.</p>
+  </div>
+</article>
+        </div>
+      </div>
+    </section>
+
+  <section id="video-editing" class="section section--dark creative">
+      <div class="container">
+        <div class="creative__head">
+          <div>
+            <span class="section-kicker">Portofolio Video Editing</span>
+            <h2 class="section-title">Clip MLBB</h2>
+            <p class="section-desc">
+              Mengelola dua akun TikTok sebagai clipper selama ±10 bulan, membuat konten gaming dan
+              mengikuti campaign game Mobile Legends Bang Bang dan membuat video edit lain dengan menggunakan CapCut, CapCut PC dan Alight Motion.
+              
+            </p>
+          </div>
+          <div class="creative__stats">
+            <div class="creative__stat"><p class="creative__stat-value">±10 Bulan</p><p class="creative__stat-label">Durasi mengelola akun</p></div>
+            <div class="creative__stat"><p class="creative__stat-value">±10 Juta</p><p class="creative__stat-label">Total views (2 akun)</p></div>
+            <div class="creative__stat"><p class="creative__stat-value">1.200+</p><p class="creative__stat-label">Total followers</p></div>
+          </div>
+        </div>
+
+        <!--
+          VIDEO LOKAL:
+          Simpan empat file MP4 di folder "videos" dengan nama:
+          video-1.mp4, video-2.mp4, video-3.mp4, video-4.mp4
+          Setiap video ditampilkan dalam frame landscape 16:9.
+        -->
+        <div class="video-showcase">
+          <article class="video-showcase__item" id="editing-video-1">
+            <div class="video-showcase__heading">
+              <span class="video-showcase__category">01 · Hasil edit dengan Aligt motion</span>
+              <h3 class="video-showcase__title">Tim Alter Ego - merry christmas please don't call</h3>
+              
+            <div class="video-showcase__frame">
+              <video class="video-showcase__player" controls playsinline preload="metadata" poster="images/video-thumb.svg">
+                <source src="video/AllVideo_01793961812434 (1).mp4" type="video/mp4" />
+                Browser kamu tidak mendukung pemutar video HTML5.
+              </video>
+            </div>
+            <div class="video-showcase__number">VIDEO 01 / 04</div>
+            
+          </article>
+
+          <article class="video-showcase__item" id="editing-video-2">
+            <div class="video-showcase__heading">
+              <span class="video-showcase__category">02 · Edit Capcut PC</span>
+              <h3 class="video-showcase__title">Random pic Ronaldo</h3>
+              <p class="video-showcase__description"></p>
+            </div>
+            <div class="video-showcase__frame">
+              <video class="video-showcase__player" controls playsinline preload="metadata" poster="images/video-thumb.svg">
+                <source src="video/test final ).mp4" type="video/mp4" />
+                Browser kamu tidak mendukung pemutar video HTML5.
+              </video>
+            </div>
+            <div class="video-showcase__number">VIDEO 02 / 04</div>
+          </article>
+
+          <article class="video-showcase__item" id="editing-video-3">
+            <div class="video-showcase__heading">
+              <span class="video-showcase__category">03 Edit Capcurt HP</span>
+              <h3 class="video-showcase__title">Edit semi exe streamer mlbb </h3>
+              
+            </div>
+            <div class="video-showcase__frame">
+              <video class="video-showcase__player" controls playsinline preload="metadata" poster="images/video-thumb.svg">
+                <source src="video/5751054101ce5ecb6f77ba3223fee64f.mp4" type="video/mp4" />
+                Browser kamu tidak mendukung pemutar video HTML5.
+              </video>
+            </div>
+            <div class="video-showcase__number">VIDEO 03 / 04</div>
+          </article>
+
+          <article class="video-showcase__item" id="editing-video-4">
+            <div class="video-showcase__heading">
+              <span class="video-showcase__category">04 Edit Capcut HP #2</span>
+              <h3 class="video-showcase__title">Clip Mobile Legends Streamer
+              <p class="video-showcase__description"></p>
+            </div>
+            
+            <div class="video-showcase__frame">
+              <video class="video-showcase__player" controls playsinline preload="metadata" poster="images/video-thumb.svg">
+                <source src="video/71d66ba4185636c31fdfa036cb657cc7.mp4" type="video/mp4" />
+                Browser kamu tidak mendukung pemutar video HTML5.
+              </video>
+            </div>
+            <div class="video-showcase__number">VIDEO 04 / 04</div>
+          </article>
+        </div>
+        <article class="video-showcase__item" id="editing-video-5">
+  <div class="video-showcase__heading">
+    <span class="video-showcase__category">05 Edit Capcut HP #3</span>
+    <h3 class="video-showcase__title">Pro player Edit</h3>
+    <p class="video-showcase__description">
+      
+    </p>
+  </div>
+  <div class="video-showcase__frame">
+    <video class="video-showcase__player" controls playsinline preload="metadata" poster="images/video-thumb.svg">
+      <source src="video/b3bc3ac76860f582858538fdf232ad6e.mp4" type="video/mp4" />
+      Browser kamu tidak mendukung pemutar video HTML5.
+    </video>
+  </div>
+  <div class="video-showcase__number">VIDEO 05 / 05</div>
+</article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__name">Raihan Zidan</p>
+      <nav class="footer__nav" aria-label="Navigasi footer">
+        <a href="#beranda">Beranda</a>
+        <a href="#dokumentasi-pjbl">Dokumentasi PJBL</a>
+        <a href="#pencapaian-tiktok">Pencapaian</a>
+        <a href="#video-editing">Video Editing</a>
+      </nav>
+      <!-- Tahun di bawah ini ditulis manual karena tanpa JavaScript tidak bisa otomatis -->
+      <p class="footer__copy">© 2026 Raihan Zidan. Seluruh hak cipta dilindungi.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
